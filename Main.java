@@ -13,7 +13,7 @@ class MyArrayDataException extends Exception {
 public class Main {
     public static int sumArray(String[][] array) throws MyArraySizeException, MyArrayDataException {
         if (array.length != 4 || array[0].length != 4) {
-            throw new MyArraySizeException("Неправильный размер  массива!!!!");
+            throw new MyArraySizeException("Неправильный размер массива!");
         }
 
         int sum = 0;
@@ -23,7 +23,7 @@ public class Main {
                 try {
                     sum += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException e) {
-                    throw new MyArrayDataException("Неверные данные в  ячейке [" + i + "][" + j + "]");
+                    throw new MyArrayDataException("Нверные  данные в  ячейке [" + i + "][" + j + "]");
                 }
             }
         }
@@ -41,7 +41,7 @@ public class Main {
 
         try {
             int sum = sumArray(array);
-            System.out.println("Сумма элементов массива: " + sum);
+            System.out.println("Это сумма элементов массива: " + sum);
         } catch (MyArraySizeException | MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
